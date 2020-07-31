@@ -1,0 +1,15 @@
+<div *ngIf="item" class="result-item">
+    <img src="{{item.imageUrl}}" alt="{{item.title}}" class="logo">
+    <div class="statistics">
+        <app-statistic imageUrl="../../../assets/eye.png" description="View count"
+            count="{{item.statistics.viewCount}}"></app-statistic>
+        <app-statistic imageUrl="../../../assets/heart.png" description="Like count"
+            count="{{item.statistics.likeCount}}"></app-statistic>
+        <app-statistic imageUrl="../../../assets/dislike.png" description="Dislike count"
+            count="{{item.statistics.dislikeCount}}"></app-statistic>
+        <app-statistic imageUrl="../../../assets/comment.png" description="Comment count"
+            count="{{item.statistics.commentCount}}"></app-statistic>
+    </div>
+    <h4 class="title">{{item.title}}</h4>
+    <a routerLink="/" class="more-button">more...</a>
+</div>
