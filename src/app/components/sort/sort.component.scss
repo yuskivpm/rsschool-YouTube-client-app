@@ -1,0 +1,18 @@
+:host {
+  margin: auto;
+}
+
+.label {
+  color: grey;
+}
+
+.sort-button {
+  margin: 5px;
+  color: lightskyblue;
+  text-decoration: underline;
+  padding: 7px;
+}
+
+.sort-button:hover {
+  outline: solid 1px blue;
+}
