@@ -1,7 +1,7 @@
 import { Thumbnails } from './thumbnails.model';
 
 export interface Snippet {
-  publishedAt: string | Date;
+  publishedAt: string;
   channelId: string;
   title: string;
   description: string;

@@ -1,16 +1,20 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
-import { SearchResultItem } from '../models/search-result-item.model';
-import { ITEMS } from '../../assets/mock-response';
+import { YoutubeResponse } from '../models/youtube-response.model';
+import { ResponseItem } from '../models/youtube/response-item.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SearchService {
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  public getItems(searchText: string): Observable<SearchResultItem[]> {
-    return of(ITEMS);
+  public getItems(searchText: string): Observable<ResponseItem[]> {
+    return this.http.get('assets/response.json').pipe(
+      map((response: YoutubeResponse) => response.items)
+    );
   }
 }

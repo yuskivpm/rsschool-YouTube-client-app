@@ -1,6 +1,6 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
 
-import { SearchResultItem } from 'src/app/models/search-result-item.model';
+import { ResponseItem } from 'src/app/models/youtube/response-item.model';
 import { SearchService } from '../../services/search.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { SearchService } from '../../services/search.service';
   styleUrls: ['./main-page.component.scss']
 })
 export class MainPageComponent implements OnInit {
-  public searchItems: SearchResultItem[];
+  public searchItems: ResponseItem[];
 
   constructor(private searchService: SearchService) { }
 
