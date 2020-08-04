@@ -43,24 +43,18 @@ header {
   box-shadow: 2px 0px 2px var(--color);
 }
 
-.input {
-  width: 300px;
+.input-field {
+  width: 500px;
+}
+
+.close-button {
+  border: none;
+  background-color: transparent;
 }
 
 // sort
 .label {
   color: grey;
-}
-
-.sort-button {
-  margin: 5px;
-  color: lightskyblue;
-  text-decoration: underline;
-  padding: 7px;
-}
-
-.sort-button:hover {
-  outline: solid 1px blue;
 }
 
 .sort {
@@ -70,4 +64,9 @@ header {
 .showSettings {
   display: block;
   margin: auto;
+}
+
+.title,
+.filter-input {
+  margin: 5px;
 }

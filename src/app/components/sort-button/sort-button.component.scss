@@ -1,0 +1,16 @@
+mat-icon {
+  vertical-align: middle;
+}
+
+.sort-button {
+  user-select: none;
+  margin: 5px;
+  cursor: pointer;
+  color: lightskyblue;
+  text-decoration: underline;
+  padding: 7px;
+}
+
+.sort-button:hover {
+  font-weight: bold;
+}

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatInputModule } from '@angular/material/input';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,8 @@ import { MainPageComponent } from './components/main-page/main-page.component';
 import { DateStatusDirective } from './directives/date-status.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FilterByKeyWordPipe } from './pipes/filter-by-key-word.pipe';
+import { SortButtonComponent } from './components/sort-button/sort-button.component';
+import { ReSortPipe } from './pipes/re-sort.pipe';
 
 @NgModule({
   declarations: [
@@ -27,6 +30,8 @@ import { FilterByKeyWordPipe } from './pipes/filter-by-key-word.pipe';
     MainPageComponent,
     DateStatusDirective,
     FilterByKeyWordPipe,
+    SortButtonComponent,
+    ReSortPipe,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +40,7 @@ import { FilterByKeyWordPipe } from './pipes/filter-by-key-word.pipe';
     BrowserAnimationsModule,
     MatIconModule,
     MatProgressSpinnerModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

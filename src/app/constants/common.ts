@@ -10,3 +10,5 @@ export const BORDER_COLORS = [
 ];
 
 export const THEME_COLOR = '#2f80ec';
+
+export const SORT_ORDER = ['format_list_numbered_rtl', 'format_list_numbered'];

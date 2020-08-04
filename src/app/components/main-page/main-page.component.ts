@@ -3,6 +3,7 @@ import { Component, OnInit, EventEmitter } from '@angular/core';
 import { IResponseItem } from 'src/app/models/youtube/response-item.model';
 import { SearchService } from '../../services/search.service';
 import { THEME_COLOR } from 'src/app/constants/common';
+import { SortEvent } from '../sort-button/sort-event.model';
 
 @Component({
   selector: 'app-main-page',
@@ -13,6 +14,7 @@ export class MainPageComponent implements OnInit {
   public searchItems: IResponseItem[];
   public loading: boolean = false;
   public filterWords: string = '';
+  public sortOrder: SortEvent;
   public themeColor: string = THEME_COLOR;
 
   constructor(private searchService: SearchService) { }
@@ -34,5 +36,9 @@ export class MainPageComponent implements OnInit {
 
   public applyFilter(filterWords: string): void {
     this.filterWords = filterWords;
+  }
+
+  public applyReSort(sortOrder: SortEvent): void {
+    this.sortOrder = sortOrder;
   }
 }
