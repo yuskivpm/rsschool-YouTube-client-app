@@ -11,3 +11,51 @@ header {
   justify-content: space-between;
   align-items: center;
 }
+// search input
+.search-input {
+  margin: auto;
+}
+
+.search-input {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 4em;
+  padding-right: 10px;
+}
+
+.settings-button {
+  height: 1em;
+  padding-left: 10px;
+}
+
+.input {
+  width: 300px;
+}
+
+// sort
+.label {
+  color: grey;
+}
+
+.sort-button {
+  margin: 5px;
+  color: lightskyblue;
+  text-decoration: underline;
+  padding: 7px;
+}
+
+.sort-button:hover {
+  outline: solid 1px blue;
+}
+
+.sort {
+  display: none;
+}
+
+.showSettings {
+  display: block;
+  margin: auto;
+}

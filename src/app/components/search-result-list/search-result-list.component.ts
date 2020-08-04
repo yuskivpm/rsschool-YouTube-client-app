@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { SearchResultItem } from '../../models/search-result-item.model';
-import { SearchService } from '../../services/search.service';
 
 @Component({
   selector: 'app-search-result-list',
@@ -9,17 +8,9 @@ import { SearchService } from '../../services/search.service';
   styleUrls: ['./search-result-list.component.scss'],
 })
 export class SearchResultListComponent implements OnInit {
-  public searchItems: SearchResultItem[];
+  @Input('items') searchItems: SearchResultItem[];
 
-  constructor(private searchService: SearchService) {}
+  constructor() { }
 
-  public ngOnInit(): void {
-    this.getItems();
-  }
-
-  public getItems(): void {
-    this.searchService
-      .getItems()
-      .subscribe((items: SearchResultItem[]) => (this.searchItems = items));
-  }
+  public ngOnInit(): void { }
 }

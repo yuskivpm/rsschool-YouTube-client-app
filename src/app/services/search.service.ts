@@ -8,9 +8,9 @@ import { ITEMS } from '../../assets/mock-response';
   providedIn: 'root',
 })
 export class SearchService {
-  constructor() {}
+  constructor() { }
 
-  public getItems(): Observable<SearchResultItem[]> {
+  public getItems(searchText: string): Observable<SearchResultItem[]> {
     return of(ITEMS);
   }
 }

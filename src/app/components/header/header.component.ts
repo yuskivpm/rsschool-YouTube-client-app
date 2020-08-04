@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+
+import { SORT_BUTTONS, USER_NAME } from 'src/app/constants/common';
 
 @Component({
   selector: 'app-header',
@@ -6,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  public userName: string = 'Your name';
+  @Output() onSearch = new EventEmitter<string>();
+  public userName: string = USER_NAME;
+  public buttons: string[] = SORT_BUTTONS;
+  public showSettings: boolean = false;
 
-  constructor() {}
+  constructor() { }
 
-  public ngOnInit(): void {}
+  public ngOnInit(): void { }
+
+  public search(searchText: string): void {
+    this.onSearch.emit(searchText);
+  }
 }

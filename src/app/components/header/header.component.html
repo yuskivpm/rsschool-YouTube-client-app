@@ -1,7 +1,17 @@
 <header>
     <div class="row">
-        <app-search-input></app-search-input>
+        <div class="search-input">
+            <img src="../../../assets/youtube.png" alt="YouTube" class="logo">
+            <input #searchText type="text" class="input">
+            <button type="button" (click)="search(searchText.value)" class="search-button">search</button>
+            <img src="../../../assets/settings.png" alt="settings" (click)="showSettings = !showSettings"
+                class="settings-button">
+        </div>
         <app-user-login [userName]="userName"></app-user-login>
     </div>
-    <app-sort></app-sort>
+    <div [class]="{ sort: true, showSettings: showSettings }">
+        <span class="label">Sorting by: </span>
+        <span *ngFor="let button of buttons" class="sort-button">{{button}}</span>
+        <input type="text" class="sort-input">
+    </div>
 </header>
