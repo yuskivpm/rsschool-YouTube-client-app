@@ -1,4 +1,4 @@
-export const SORT_BUTTONS = ['date', 'count of views', 'by word or sentence'];
+export const SORT_BUTTONS = ['date', 'count of views'];
 
 export const USER_NAME = 'Your name';
 
@@ -8,3 +8,5 @@ export const BORDER_COLORS = [
   { term: 183, color: 'yellow' },
   { term: Number.MAX_VALUE, color: 'red' },
 ];
+
+export const THEME_COLOR = '#2f80ec';

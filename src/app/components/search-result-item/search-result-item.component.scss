@@ -29,10 +29,10 @@
 .more-button {
   color: white;
   text-decoration: none;
-  background-color: #2f80ec;
+  background-color: var(--color);
   padding: 10px 40px;
   border-radius: 5px;
-  box-shadow: 2px -2px 2px #2f81ec54;
+  box-shadow: 2px 0 2px #2f81ec;
   position: absolute;
   bottom: 10px;
   transform: translateX(calc(50% - 15px));

@@ -1,10 +1,10 @@
-import { Snippet } from './snippet.model';
-import { Statistics } from './statistics.model';
+import { ISnippet } from './snippet.model';
+import { IStatistics } from './statistics.model';
 
-export interface ResponseItem {
+export interface IResponseItem {
   kind: string;
   etag: string;
   id: string;
-  snippet: Snippet;
-  statistics: Statistics;
+  snippet: ISnippet;
+  statistics: IStatistics;
 }

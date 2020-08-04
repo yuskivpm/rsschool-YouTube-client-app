@@ -1,15 +1,11 @@
 <div *ngIf="item" class="result-item" [appDateStatus]="item.snippet.publishedAt">
-    <img src="{{item.snippet.thumbnails.default.url}}" alt="{{item.snippet.title}}" class="logo">
+    <img src="{{ item.snippet.thumbnails.default.url }}" alt="{{ item.snippet.title }}" class="logo">
     <div class="statistics">
-        <app-statistic imageUrl="../../../assets/eye.png" description="View count"
-            count="{{item.statistics.viewCount}}"></app-statistic>
-        <app-statistic imageUrl="../../../assets/heart.png" description="Like count"
-            count="{{item.statistics.likeCount}}"></app-statistic>
-        <app-statistic imageUrl="../../../assets/dislike.png" description="Dislike count"
-            count="{{item.statistics.dislikeCount}}"></app-statistic>
-        <app-statistic imageUrl="../../../assets/comment.png" description="Comment count"
-            count="{{item.statistics.commentCount}}"></app-statistic>
+        <app-statistic iconType="visibility" count="{{ item.statistics.viewCount }}"></app-statistic>
+        <app-statistic iconType="thumb_up" count="{{ item.statistics.likeCount }}"></app-statistic>
+        <app-statistic iconType="thumb_down" count="{{ item.statistics.dislikeCount }}"></app-statistic>
+        <app-statistic iconType="comment" count="{{ item.statistics.commentCount }}"></app-statistic>
     </div>
-    <h4 class="title">{{item.snippet.title}}</h4>
+    <h4 class="title">{{ item.snippet.title }}</h4>
     <a routerLink="/" class="more-button">more...</a>
 </div>

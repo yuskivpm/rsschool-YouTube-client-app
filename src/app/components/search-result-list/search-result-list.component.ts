@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { ResponseItem } from 'src/app/models/youtube/response-item.model';
+import { IResponseItem } from 'src/app/models/youtube/response-item.model';
 
 @Component({
   selector: 'app-search-result-list',
@@ -8,7 +8,7 @@ import { ResponseItem } from 'src/app/models/youtube/response-item.model';
   styleUrls: ['./search-result-list.component.scss'],
 })
 export class SearchResultListComponent implements OnInit {
-  @Input('items') searchItems: ResponseItem[];
+  @Input('items') searchItems: IResponseItem[];
 
   constructor() { }
 

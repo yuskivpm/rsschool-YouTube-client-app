@@ -4,14 +4,21 @@
             <img src="../../../assets/youtube.png" alt="YouTube" class="logo">
             <input #searchText type="text" class="input">
             <button type="button" (click)="search(searchText.value)" class="search-button">search</button>
-            <img src="../../../assets/settings.png" alt="settings" (click)="showSettings = !showSettings"
-                class="settings-button">
+            <mat-icon (click)="showSettings = !showSettings" class="settings-button" aria-hidden="false"
+                aria-label="Settings">settings</mat-icon>
         </div>
         <app-user-login [userName]="userName"></app-user-login>
     </div>
     <div [class]="{ sort: true, showSettings: showSettings }">
         <span class="label">Sorting by: </span>
-        <span *ngFor="let button of buttons" class="sort-button">{{button}}</span>
-        <input type="text" class="sort-input">
+
+        <span *ngFor="let button of buttons" class="sort-button">
+            {{ button }}
+            <mat-icon> format_list_numbered </mat-icon>
+            <mat-icon> format_list_numbered_rtl </mat-icon>
+        </span>
+
+        <span>by word or sentence</span>
+        <input type="text" class="filter-input" #filterInput (input)="onFilterInput(filterInput.value)">
     </div>
 </header>

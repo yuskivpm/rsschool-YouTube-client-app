@@ -1,4 +1,4 @@
-export interface Statistics {
+export interface IStatistics {
   viewCount: string | number;
   likeCount: string | number;
   dislikeCount: string | number;

@@ -1,4 +1,4 @@
-export interface Thumbnail {
+export interface IThumbnail {
   url: string;
   width: number;
   height: number;

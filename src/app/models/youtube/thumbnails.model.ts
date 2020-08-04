@@ -1,9 +1,9 @@
-import { Thumbnail } from './thumbnail.model';
+import { IThumbnail } from './thumbnail.model';
 
-export interface Thumbnails {
-  default: Thumbnail;
-  medium: Thumbnail;
-  high: Thumbnail;
-  standard: Thumbnail;
-  maxres: Thumbnail;
+export interface IThumbnails {
+  default: IThumbnail;
+  medium: IThumbnail;
+  high: IThumbnail;
+  standard: IThumbnail;
+  maxres: IThumbnail;
 }

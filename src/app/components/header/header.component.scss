@@ -11,6 +11,7 @@ header {
   justify-content: space-between;
   align-items: center;
 }
+
 // search input
 .search-input {
   margin: auto;
@@ -21,14 +22,25 @@ header {
   align-items: center;
 }
 
+.search-button {
+  background-color: var(--color);
+  color: #fff;
+  border-radius: 5px;
+}
+
 .logo {
   height: 4em;
   padding-right: 10px;
 }
 
 .settings-button {
-  height: 1em;
   padding-left: 10px;
+  cursor: pointer;
+  color: var(--color);
+}
+
+.search-button {
+  box-shadow: 2px 0px 2px var(--color);
 }
 
 .input {

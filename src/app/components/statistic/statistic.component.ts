@@ -6,11 +6,10 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./statistic.component.scss'],
 })
 export class StatisticComponent implements OnInit {
-  @Input() public imageUrl: string;
-  @Input() public description: string;
+  @Input() public iconType: string;
   @Input() public count: string | number;
 
-  constructor() {}
+  constructor() { }
 
-  public ngOnInit(): void {}
+  public ngOnInit(): void { }
 }

@@ -1,9 +1,9 @@
-import { PageInfo } from './youtube/page-info.model';
-import { ResponseItem } from './youtube/response-item.model';
+import { IPageInfo } from './youtube/page-info.model';
+import { IResponseItem } from './youtube/response-item.model';
 
-export interface YoutubeResponse {
+export interface IYouTubeResponse {
   kind: string;
   etag: string;
-  pageInfo: PageInfo;
-  items: ResponseItem[];
+  pageInfo: IPageInfo;
+  items: IResponseItem[];
 }

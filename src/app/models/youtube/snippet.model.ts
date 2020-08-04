@@ -1,11 +1,11 @@
-import { Thumbnails } from './thumbnails.model';
+import { IThumbnails } from './thumbnails.model';
 
-export interface Snippet {
+export interface ISnippet {
   publishedAt: string;
   channelId: string;
   title: string;
   description: string;
-  thumbnails: Thumbnails;
+  thumbnails: IThumbnails;
   channelTitle: string;
   tags: string[];
   categoryId: string;

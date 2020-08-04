@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { MatIconModule } from '@angular/material/icon';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +14,7 @@ import { StatisticComponent } from './components/statistic/statistic.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { DateStatusDirective } from './directives/date-status.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FilterByKeyWordPipe } from './pipes/filter-by-key-word.pipe';
 
 @NgModule({
   declarations: [
@@ -23,8 +26,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     StatisticComponent,
     MainPageComponent,
     DateStatusDirective,
+    FilterByKeyWordPipe,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, BrowserAnimationsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatProgressSpinnerModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

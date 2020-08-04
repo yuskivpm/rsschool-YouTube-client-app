@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, delay } from 'rxjs/operators';
 
-import { YoutubeResponse } from '../models/youtube-response.model';
-import { ResponseItem } from '../models/youtube/response-item.model';
+import { IYouTubeResponse } from '../models/youtube-response.model';
+import { IResponseItem } from '../models/youtube/response-item.model';
 
 @Injectable({
   providedIn: 'root',
@@ -12,9 +12,10 @@ import { ResponseItem } from '../models/youtube/response-item.model';
 export class SearchService {
   constructor(private http: HttpClient) { }
 
-  public getItems(searchText: string): Observable<ResponseItem[]> {
+  public getItems(searchText: string): Observable<IResponseItem[]> {
     return this.http.get('assets/response.json').pipe(
-      map((response: YoutubeResponse) => response.items)
+      delay(2000),
+      map((response: IYouTubeResponse) => response.items)
     );
   }
 }
