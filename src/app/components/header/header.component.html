@@ -11,6 +11,7 @@
                     <mat-icon>close</mat-icon>
                 </button>
             </mat-form-field>
+
             <button type="button" (click)="search(searchText.value)" class="search-button">search</button>
             <mat-icon (click)="showSettings = !showSettings" class="settings-button" aria-hidden="false"
                 aria-label="Settings">settings</mat-icon>
@@ -20,8 +21,8 @@
     <div [class]="{ sort: true, showSettings: showSettings }">
         <span class="label">Sorting by: </span>
 
-        <app-sort-button *ngFor="let button of buttons" caption="{{button}}" (onSort)="reSort($event)">
-        </app-sort-button>
+        <app-sort-button *ngFor="let button of buttons" caption="{{button}}" [sortOrder]="sortOrderByName(button)"
+            (click)="reSort(button)"></app-sort-button>
 
         <span class="title">by word or sentence</span>
         <input type="text" class="filter-input" #filterInput (input)="onFilterInput(filterInput.value)">

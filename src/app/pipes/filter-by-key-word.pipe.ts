@@ -9,7 +9,6 @@ export class FilterByKeyWordPipe implements PipeTransform {
   transform(responseItems: IResponseItem[], filterWord: string): IResponseItem[] {
     const filter = new RegExp(filterWord, 'i');
     return responseItems.filter(({ snippet: { title } }) => filter.test(title));
-    // return responseItems.filter(({ snippet: { title } }) => title.includes(filterWord));
   }
 
 }

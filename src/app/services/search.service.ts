@@ -6,6 +6,8 @@ import { map, delay } from 'rxjs/operators';
 import { IYouTubeResponse } from '../models/youtube-response.model';
 import { IResponseItem } from '../models/youtube/response-item.model';
 
+const MOCK_DELAY = 2000;
+
 @Injectable({
   providedIn: 'root',
 })
@@ -14,7 +16,7 @@ export class SearchService {
 
   public getItems(searchText: string): Observable<IResponseItem[]> {
     return this.http.get('assets/response.json').pipe(
-      delay(2000),
+      delay(MOCK_DELAY),
       map((response: IYouTubeResponse) => response.items)
     );
   }

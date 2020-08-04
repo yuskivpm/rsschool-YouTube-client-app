@@ -1,4 +1,4 @@
-<span class="sort-button" (click)="toggleSortOrder()">
+<span class="sort-button">
     <span>{{ caption }}</span>
-    <mat-icon>{{sortOrder}}</mat-icon>
+    <mat-icon *ngIf="sortOrder >= 0">{{sortOrderText}}</mat-icon>
 </span>

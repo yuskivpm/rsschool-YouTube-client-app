@@ -3,6 +3,5 @@
     </app-header>
     <mat-spinner *ngIf="loading" color="#2f80ec"></mat-spinner>
     <app-search-result-list *ngIf="searchItems" [items]="searchItems | filterByKeyWord:filterWords | reSort:sortOrder">
-
     </app-search-result-list>
 </div>

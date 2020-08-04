@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { IResponseItem } from 'src/app/models/youtube/response-item.model';
 
@@ -7,10 +7,6 @@ import { IResponseItem } from 'src/app/models/youtube/response-item.model';
   templateUrl: './search-result-item.component.html',
   styleUrls: ['./search-result-item.component.scss'],
 })
-export class SearchResultItemComponent implements OnInit {
+export class SearchResultItemComponent {
   @Input() public item: IResponseItem;
-
-  constructor() { }
-
-  public ngOnInit(): void { }
 }

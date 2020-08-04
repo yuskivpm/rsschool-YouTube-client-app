@@ -1,29 +1,17 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { SORT_ORDER } from 'src/app/constants/common';
-import { SortEvent } from './sort-event.model';
 
 @Component({
   selector: 'app-sort-button',
   templateUrl: './sort-button.component.html',
   styleUrls: ['./sort-button.component.scss']
 })
-export class SortButtonComponent implements OnInit {
+export class SortButtonComponent {
   @Input() caption: string;
-  @Output() onSort = new EventEmitter<SortEvent>();
-  private currentSortOrder: number = 1;
+  @Input() sortOrder: number;
 
-  constructor() { }
-
-  ngOnInit(): void { }
-
-  get sortOrder(): string {
-    return SORT_ORDER[this.currentSortOrder];
+  get sortOrderText(): string {
+    return SORT_ORDER[this.sortOrder];
   }
-
-  toggleSortOrder(): void {
-    this.currentSortOrder = 1 - this.currentSortOrder;
-    this.onSort.emit(new SortEvent(this.caption, this.currentSortOrder));
-  }
-
 }
