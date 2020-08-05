@@ -9,14 +9,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SearchResultListComponent } from './components/search-result-list/search-result-list.component';
-import { SearchResultItemComponent } from './components/search-result-item/search-result-item.component';
-import { UserLoginComponent } from './components/user-login/user-login.component';
-import { StatisticComponent } from './components/statistic/statistic.component';
+import { SearchResultItemComponent } from './components/search-result-list/search-result-item/search-result-item.component';
+import { UserLoginComponent } from './components/header/user-login/user-login.component';
+import { StatisticComponent } from './components/search-result-list/search-result-item/statistic/statistic.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { DateStatusDirective } from './directives/date-status.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FilterByKeyWordPipe } from './pipes/filter-by-key-word.pipe';
-import { SortButtonComponent } from './components/sort-button/sort-button.component';
+import { SortButtonComponent } from './components/header/sort-button/sort-button.component';
 import { ReSortPipe } from './pipes/re-sort.pipe';
 
 @NgModule({

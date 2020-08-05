@@ -1,7 +1,7 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 
 import { SORT_BUTTONS, USER_NAME } from 'src/app/constants/common';
-import { SortEvent } from '../sort-button/sort-event.model';
+import { SortEvent } from 'src/app/models/sort-event.model';
 
 @Component({
   selector: 'app-header',
@@ -9,13 +9,13 @@ import { SortEvent } from '../sort-button/sort-event.model';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  @Output() onSearch = new EventEmitter<string>();
-  @Output() onFilter = new EventEmitter<string>();
-  @Output() onReSort = new EventEmitter<SortEvent>();
+  private curSortOrder: SortEvent = {} as SortEvent;
+  @Output() public onSearch: EventEmitter<string> = new EventEmitter<string>();
+  @Output() public onFilter: EventEmitter<string> = new EventEmitter<string>();
+  @Output() public onReSort: EventEmitter<SortEvent> = new EventEmitter<SortEvent>();
   public userName: string = USER_NAME;
   public buttons: string[] = SORT_BUTTONS;
   public showSettings: boolean = false;
-  private curSortOrder: SortEvent = {} as SortEvent;
 
   public search(searchText: string): void {
     this.onSearch.emit(searchText);

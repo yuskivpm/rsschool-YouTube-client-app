@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-import { SortEvent } from '../components/sort-button/sort-event.model';
-import { IResponseItem } from '../models/youtube/response-item.model';
+import { SortEvent } from 'src/app/models/sort-event.model';
+import { IResponseItem } from 'src/app/models/response-item.model';
 import { SortFieldService } from '../services/sort-field.service';
 
 @Pipe({
@@ -11,7 +11,7 @@ export class ReSortPipe implements PipeTransform {
 
   constructor(private sortFieldService: SortFieldService) { }
 
-  transform(responseItems: IResponseItem[], sortEvent: SortEvent): IResponseItem[] {
+  public transform(responseItems: IResponseItem[], sortEvent: SortEvent): IResponseItem[] {
     return sortEvent
       ? [...responseItems].sort((a, b) => this.sortFieldService.compareItems(sortEvent, a, b))
       : responseItems;

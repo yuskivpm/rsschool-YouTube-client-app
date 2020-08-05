@@ -4,9 +4,11 @@ import { Observable } from 'rxjs';
 import { map, delay } from 'rxjs/operators';
 
 import { IYouTubeResponse } from '../models/youtube-response.model';
-import { IResponseItem } from '../models/youtube/response-item.model';
+import { IResponseItem } from '../models/response-item.model';
 
-const MOCK_DELAY = 2000;
+// this rule conflict with typedef rule (https://github.com/palantir/tslint/issues/711)
+// tslint:disable-next-line: no-inferrable-types
+const MOCK_DELAY: number = 2000;
 
 @Injectable({
   providedIn: 'root',

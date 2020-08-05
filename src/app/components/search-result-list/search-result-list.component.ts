@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { IResponseItem } from 'src/app/models/youtube/response-item.model';
+import { IResponseItem } from 'src/app/models/response-item.model';
 
 @Component({
   selector: 'app-search-result-list',
@@ -8,5 +8,5 @@ import { IResponseItem } from 'src/app/models/youtube/response-item.model';
   styleUrls: ['./search-result-list.component.scss'],
 })
 export class SearchResultListComponent {
-  @Input('items') searchItems: IResponseItem[];
+  @Input('items') public searchItems: IResponseItem[];
 }

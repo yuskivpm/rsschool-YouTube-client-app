@@ -1,14 +1,23 @@
-export const SORT_BUTTONS = ['date', 'count of views'];
+export const SORT_BUTTONS: string[] = ['date', 'count of views'];
 
-export const USER_NAME = 'Your name';
+// this rule conflict with typedef rule (https://github.com/palantir/tslint/issues/711)
+// tslint:disable-next-line: no-inferrable-types
+export const USER_NAME: string = 'Your name';
 
-export const BORDER_COLORS = [
+interface BorderColors {
+  term: number;
+  color: string;
+}
+
+export const BORDER_COLORS: BorderColors[] = [
   { term: 7, color: 'blue' },
   { term: 31, color: 'green' },
   { term: 183, color: 'yellow' },
   { term: Number.MAX_VALUE, color: 'red' },
 ];
 
-export const THEME_COLOR = '#2f80ec';
+// this rule conflict with typedef rule (https://github.com/palantir/tslint/issues/711)
+// tslint:disable-next-line: no-inferrable-types
+export const THEME_COLOR: string = '#2f80ec';
 
-export const SORT_ORDER = ['arrow_downward', 'arrow_upward'];
+export const SORT_ORDER: string[] = ['arrow_downward', 'arrow_upward'];

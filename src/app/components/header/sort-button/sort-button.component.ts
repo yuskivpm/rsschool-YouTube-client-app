@@ -8,8 +8,8 @@ import { SORT_ORDER } from 'src/app/constants/common';
   styleUrls: ['./sort-button.component.scss']
 })
 export class SortButtonComponent {
-  @Input() caption: string;
-  @Input() sortOrder: number;
+  @Input() public caption: string;
+  @Input() public sortOrder: number;
 
   get sortOrderText(): string {
     return SORT_ORDER[this.sortOrder];

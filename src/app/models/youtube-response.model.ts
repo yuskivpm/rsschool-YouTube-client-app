@@ -1,5 +1,9 @@
-import { IPageInfo } from './youtube/page-info.model';
-import { IResponseItem } from './youtube/response-item.model';
+import { IResponseItem } from './response-item.model';
+
+interface IPageInfo {
+  totalResults: number;
+  resultsPerPage: number;
+}
 
 export interface IYouTubeResponse {
   kind: string;

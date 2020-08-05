@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { IResponseItem } from 'src/app/models/youtube/response-item.model';
+import { IResponseItem } from 'src/app/models/response-item.model';
 
 @Component({
   selector: 'app-search-result-item',

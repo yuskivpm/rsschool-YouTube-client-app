@@ -6,15 +6,15 @@ import { BORDER_COLORS } from 'src/app/constants/common';
   selector: '[appDateStatus]'
 })
 export class DateStatusDirective implements OnInit {
-  @Input('appDateStatus') date: string = '';
+  @Input('appDateStatus') public date: string = '';
 
   constructor(private el: ElementRef) { }
 
   public ngOnInit(): void {
-    const DAY_LENGTH = 1000 * 60 * 60 * 24;
-    const daysPast = Math.abs((Date.now() - new Date(this.date).getTime()) / DAY_LENGTH);
+    const DAY_LENGTH: number = 1000 * 60 * 60 * 24;
+    const daysPast: number = Math.abs((Date.now() - new Date(this.date).getTime()) / DAY_LENGTH);
     const node: HTMLElement = this.el.nativeElement;
-    const borderColor = BORDER_COLORS.find(({ term }) => daysPast < term).color;
+    const borderColor: string = BORDER_COLORS.find(({ term }) => daysPast < term).color;
     node.style.borderBottom = `5px solid ${borderColor}`;
   }
 }
