@@ -21,3 +21,5 @@ export const BORDER_COLORS: BorderColors[] = [
 export const THEME_COLOR: string = '#2f80ec';
 
 export const SORT_ORDER: string[] = ['arrow_downward', 'arrow_upward'];
+
+export const DAY_LENGTH: number = 1000 * 60 * 60 * 24;
