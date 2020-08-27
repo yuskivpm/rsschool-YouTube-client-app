@@ -1,8 +1,6 @@
-export const SORT_BUTTONS: string[] = ['date', 'count of views'];
-
 // this rule conflict with typedef rule (https://github.com/palantir/tslint/issues/711)
-// tslint:disable-next-line: no-inferrable-types
-export const USER_NAME: string = 'Your name';
+/* tslint:disable: no-inferrable-types */
+export const SORT_BUTTONS: string[] = ['date', 'count of views'];
 
 interface BorderColors {
   term: number;
@@ -16,10 +14,20 @@ export const BORDER_COLORS: BorderColors[] = [
   { term: Number.MAX_VALUE, color: 'red' },
 ];
 
-// this rule conflict with typedef rule (https://github.com/palantir/tslint/issues/711)
-// tslint:disable-next-line: no-inferrable-types
 export const THEME_COLOR: string = '#2f80ec';
 
 export const SORT_ORDER: string[] = ['arrow_downward', 'arrow_upward'];
 
 export const DAY_LENGTH: number = 1000 * 60 * 60 * 24;
+
+export const MIN_LOGIN_LENGTH: number = 3;
+
+export const MIN_PASSWORD_LENGTH: number = 7;
+
+// URLs
+export const LOGIN_PAGE: string = 'login';
+
+export const LIST_PAGE: string = 'list';
+
+// user holder
+export const USER_HOLDER: string = 'auth-user';

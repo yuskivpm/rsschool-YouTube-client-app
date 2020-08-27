@@ -1,0 +1,6 @@
+<div class="user-profile" *ngIf="userName">
+    <span class="user-name">{{ userName }}</span>
+    <mat-icon aria-hidden="false" aria-label="Account icon" class="icon" (click)="logout()" title="logout">
+      account_box
+    </mat-icon>
+</div>
