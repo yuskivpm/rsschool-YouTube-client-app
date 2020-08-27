@@ -1,0 +1,5 @@
+<div class="content" role="main">
+  <mat-spinner *ngIf="isLoading" color="#2f80ec"></mat-spinner>
+  <app-board *ngIf="searchItems" [items]="searchItems | async | filterByKeyWord:filterWords | reSort:sortOrder">
+  </app-board>
+</div>

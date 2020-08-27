@@ -1,0 +1,38 @@
+.result-item {
+  position: relative;
+  width: 220px;
+  height: 280px;
+  margin: 15px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 2px 0 2px grey;
+  overflow: hidden;
+  background-color: #e5e5e5;
+}
+
+.logo {
+  width: 100%;
+  height: 120px;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+.title {
+  text-align: right;
+}
+
+.more-button {
+  position: absolute;
+  bottom: 10px;
+  padding: 10px 40px;
+  border-radius: 5px;
+  box-shadow: 2px 0 2px #2f81ec;
+  background-color: var(--color);
+  color: white;
+  text-decoration: none;
+  transform: translateX(calc(50% - 15px));
+}
+
+.more-button:hover {
+  background-color: mediumblue;
+}

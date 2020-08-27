@@ -1,0 +1,54 @@
+:host {
+  min-height: 600px;
+}
+
+.empty {
+  color: red;
+  text-align: center;
+}
+
+.item-block {
+  height: 100%;
+  display: flex;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px grey;
+}
+
+.equal {
+  flex: 1;
+}
+
+.logo {
+  object-fit: cover;
+}
+
+.text {
+  background-color: #E5E5E5;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+}
+
+.headers{
+  display: flex;
+  justify-content: space-between;
+}
+
+.date {
+  color: grey;
+  font-size: small;
+}
+.description {
+  color: grey;
+}
+
+app-statistic {
+  margin: 0 10px;
+}
+
+@media screen and (max-width: 900px) {
+
+  .item-block {
+    flex-direction: column;
+  }
+}

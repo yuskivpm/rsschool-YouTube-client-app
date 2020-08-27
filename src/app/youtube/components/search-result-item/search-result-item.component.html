@@ -1,0 +1,6 @@
+<div *ngIf="item" class="result-item" [appDateStatus]="item.snippet.publishedAt">
+    <img src="{{ item.snippet.thumbnails.default.url }}" alt="{{ item.snippet.title }}" class="logo">
+    <app-statistics-block [statistics]="item.statistics"></app-statistics-block>
+    <h4 class="title">{{ item.snippet.title }}</h4>
+    <a [routerLink]="'/list/'+item.id" class="more-button">more...</a>
+</div>
