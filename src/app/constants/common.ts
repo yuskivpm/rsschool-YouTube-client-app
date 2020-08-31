@@ -31,3 +31,14 @@ export const LIST_PAGE: string = 'list';
 
 // user holder
 export const USER_HOLDER: string = 'auth-user';
+
+// youtube search
+export const API_BASE: string = 'https://www.googleapis.com/youtube/v3/';
+
+export const SEARCH_API: string = `search?type=video&maxResults=15&q=`;
+
+export const VIDEO_API: string = `videos?part=snippet,statistics&id=`;
+
+export const DEBOUNCE_TOME: number = 500;
+
+export const MIN_SEARCH_LENGTH: number = 3;

@@ -1,5 +1,6 @@
 :host {
   min-height: 600px;
+  margin: 30px;
 }
 
 .empty {
@@ -8,8 +9,8 @@
 }
 
 .item-block {
-  height: 100%;
   display: flex;
+  margin: 30px;
   border-radius: 5px;
   box-shadow: 5px 5px 5px grey;
 }
@@ -23,13 +24,13 @@
 }
 
 .text {
-  background-color: #E5E5E5;
-  padding: 35px;
   display: flex;
   flex-direction: column;
+  padding: 35px;
+  background-color: #e5e5e5;
 }
 
-.headers{
+.headers {
   display: flex;
   justify-content: space-between;
 }
@@ -47,7 +48,6 @@ app-statistic {
 }
 
 @media screen and (max-width: 900px) {
-
   .item-block {
     flex-direction: column;
   }

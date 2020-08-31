@@ -8,6 +8,9 @@ interface IPageInfo {
 export interface IYouTubeResponse {
   kind: string;
   etag: string;
+  nextPageToken: string;
+  prevPageToken: string;
+  regionCode?: string;
   pageInfo: IPageInfo;
   items: IResponseItem[];
 }

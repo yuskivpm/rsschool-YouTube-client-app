@@ -7,11 +7,11 @@ import { DetailedInfoComponent } from './pages/detailed-info/detailed-info.compo
 import { BoardComponent } from './components/board/board.component';
 import { SearchResultItemComponent } from './components/search-result-item/search-result-item.component';
 import { StatisticComponent } from './components/statistic/statistic.component';
+import { StatisticsBlockComponent } from './components/statistics-block/statistics-block.component';
 import { DateStatusDirective } from './directives/date-status.directive';
 import { FilterByKeyWordPipe } from './pipes/filter-by-key-word.pipe';
 import { ReSortPipe } from './pipes/re-sort.pipe';
 import { CounterPipe } from './pipes/counter.pipe';
-import { StatisticsBlockComponent } from './components/statistics-block/statistics-block.component';
 
 @NgModule({
   declarations: [

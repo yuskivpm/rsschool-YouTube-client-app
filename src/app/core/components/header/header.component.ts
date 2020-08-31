@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 
-import { SORT_BUTTONS, LIST_PAGE } from 'src/app/constants/common';
+import { SORT_BUTTONS, MIN_SEARCH_LENGTH } from 'src/app/constants/common';
 import { SortEvent } from 'src/app/youtube/models/sort-event.model';
 import { SearchService } from 'src/app/core/services/search.service';
+import { AuthUserService } from 'src/app/core/services/auth-user.service';
 
 @Component({
   selector: 'app-header',
@@ -15,11 +15,15 @@ export class HeaderComponent {
   public buttons: string[] = SORT_BUTTONS;
   public showSettings: boolean = false;
 
-  constructor(private router: Router, private searchService: SearchService) { }
+  constructor(
+    private searchService: SearchService,
+    private authUserService: AuthUserService
+  ) {}
 
   public search(searchText: string): void {
-    this.searchService.getItems(searchText);
-    this.router.navigate([`/${LIST_PAGE}`]);
+    if (searchText.length >= MIN_SEARCH_LENGTH) {
+      this.searchService.getItems(searchText);
+    }
   }
 
   public onFilterInput(filterValue: string): void {
@@ -42,5 +46,9 @@ export class HeaderComponent {
     return this.curSortOrder.sortName === buttonName
       ? this.curSortOrder.sortOrder
       : undefined;
+  }
+
+  public get isAuthorized(): boolean {
+    return this.authUserService.isAuthorized;
   }
 }

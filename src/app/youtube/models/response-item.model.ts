@@ -8,8 +8,8 @@ interface IThumbnails {
   default: IThumbnail;
   medium: IThumbnail;
   high: IThumbnail;
-  standard: IThumbnail;
-  maxres: IThumbnail;
+  standard?: IThumbnail;
+  maxres?: IThumbnail;
 }
 
 interface ISnippet {
@@ -19,14 +19,15 @@ interface ISnippet {
   description: string;
   thumbnails: IThumbnails;
   channelTitle: string;
-  tags: string[];
-  categoryId: string;
   liveBroadcastContent: string;
-  localized: {
+  publishTime: string;
+  tags?: string[];
+  categoryId?: string;
+  defaultAudioLanguage?: string;
+  localized?: {
     title: string;
     description: string;
   };
-  defaultAudioLanguage: string;
 }
 
 export interface IStatistics {
@@ -37,10 +38,15 @@ export interface IStatistics {
   commentCount: string | number;
 }
 
+export interface IID {
+  kind: string;
+  videoId: string;
+}
+
 export interface IResponseItem {
   kind: string;
   etag: string;
-  id: string;
-  snippet: ISnippet;
-  statistics: IStatistics;
+  id: string | IID;
+  snippet?: ISnippet;
+  statistics?: IStatistics;
 }
