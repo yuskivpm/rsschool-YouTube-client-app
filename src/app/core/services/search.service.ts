@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { of, Observable, BehaviorSubject } from 'rxjs';
-import { map, take, switchMap, debounceTime } from 'rxjs/operators';
+import { map, take, switchMap, debounceTime, finalize } from 'rxjs/operators';
 
 import { IYouTubeResponse } from 'src/app/youtube/models/youtube-response.model';
 import { IResponseItem, IID } from 'src/app/youtube/models/response-item.model';
@@ -72,12 +72,11 @@ export class SearchService {
               .pipe(map((response: IYouTubeResponse) => response.items));
           }
         ),
-        take(1)
+        take(1),
+        finalize(() => this.isLoading.next(false))
       )
       .subscribe(
-        (items) => this.items.next(items),
-        null,
-        () => this.isLoading.next(false)
+        (items) => this.items.next(items)
       );
   }
 

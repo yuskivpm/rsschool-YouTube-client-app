@@ -1,24 +1,39 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { SORT_BUTTONS, MIN_SEARCH_LENGTH } from 'src/app/constants/common';
 import { SortEvent } from 'src/app/youtube/models/sort-event.model';
 import { SearchService } from 'src/app/core/services/search.service';
 import { AuthUserService } from 'src/app/core/services/auth-user.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit, OnDestroy {
+  private subscription: Subscription;
   private curSortOrder: SortEvent = {} as SortEvent;
   public buttons: string[] = SORT_BUTTONS;
   public showSettings: boolean = false;
+  public isAuthorized: boolean = false;
 
   constructor(
     private searchService: SearchService,
     private authUserService: AuthUserService
   ) {}
+
+  public ngOnInit(): void {
+    this.subscription = this.authUserService.authUser.subscribe((user) => {
+      this.isAuthorized = !!user;
+    });
+  }
+
+  public ngOnDestroy(): void {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }
 
   public search(searchText: string): void {
     if (searchText.length >= MIN_SEARCH_LENGTH) {
@@ -26,7 +41,7 @@ export class HeaderComponent {
     }
   }
 
-  public onFilterInput(filterValue: string): void {
+  public startFilter(filterValue: string): void {
     this.searchService.filterWords = filterValue;
   }
 
@@ -46,9 +61,5 @@ export class HeaderComponent {
     return this.curSortOrder.sortName === buttonName
       ? this.curSortOrder.sortOrder
       : undefined;
-  }
-
-  public get isAuthorized(): boolean {
-    return this.authUserService.isAuthorized;
   }
 }

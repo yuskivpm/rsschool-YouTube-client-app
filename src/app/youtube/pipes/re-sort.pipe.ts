@@ -8,7 +8,6 @@ import { SortFieldService } from '../services/sort-field.service';
   name: 'reSort'
 })
 export class ReSortPipe implements PipeTransform {
-
   constructor(private sortFieldService: SortFieldService) { }
 
   public transform(responseItems: IResponseItem[], sortEvent: SortEvent): IResponseItem[] {
@@ -16,5 +15,4 @@ export class ReSortPipe implements PipeTransform {
       ? [...responseItems].sort((a, b) => this.sortFieldService.compareItems(sortEvent, a, b))
       : responseItems;
   }
-
 }

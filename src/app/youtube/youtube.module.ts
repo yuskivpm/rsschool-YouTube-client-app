@@ -26,7 +26,6 @@ import { CounterPipe } from './pipes/counter.pipe';
     StatisticsBlockComponent,
     CounterPipe,
   ],
-  exports: [MainPageComponent, DetailedInfoComponent],
   imports: [SharedModule, YoutubeRoutingModule],
 })
 export class YoutubeModule {}

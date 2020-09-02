@@ -24,12 +24,11 @@ export const MIN_LOGIN_LENGTH: number = 3;
 
 export const MIN_PASSWORD_LENGTH: number = 7;
 
-// URLs
+// router URLs
 export const LOGIN_PAGE: string = 'login';
 
 export const LIST_PAGE: string = 'list';
 
-// user holder
 export const USER_HOLDER: string = 'auth-user';
 
 // youtube search

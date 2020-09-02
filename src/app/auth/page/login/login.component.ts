@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { finalize } from 'rxjs/operators';
 
 import {
   MIN_PASSWORD_LENGTH,
@@ -8,7 +9,6 @@ import {
   LIST_PAGE,
 } from 'src/app/constants/common';
 import { AuthUserService } from 'src/app/core/services/auth-user.service';
-import { UserHolderService } from 'src/app/core/services/user-holder.service';
 import { User } from 'src/app/shared/models/user.model';
 
 @Component({
@@ -22,24 +22,28 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private authUserService: AuthUserService,
-    private userHolderService: UserHolderService
+    private authUserService: AuthUserService
   ) {}
 
   private handleLogin(user: User): void {
     if (user.name && (user.password || user.token)) {
       this.loading = true;
       this.loginForm.controls.password.setValue('');
-      this.authUserService.login(user).subscribe(
-        (success) => {
+      this.authUserService
+        .login(user)
+        .pipe(finalize(() => (this.loading = false)))
+        .subscribe((success) => {
           if (success) {
             this.router.navigate([`/${LIST_PAGE}`]);
           }
-        },
-        null,
-        () => (this.loading = false)
-      );
+        });
     }
+  }
+
+  private getValueFromControl(constrolName: string): string {
+    const value: string = this.loginForm.controls[constrolName].value.trim();
+    this.loginForm.controls[constrolName].setValue(value);
+    return value;
   }
 
   public ngOnInit(): void {
@@ -53,17 +57,11 @@ export class LoginComponent implements OnInit {
         Validators.minLength(MIN_PASSWORD_LENGTH),
       ]),
     });
-    const lastUser: User = this.userHolderService.loadLastUser();
-    if (lastUser) {
-      this.handleLogin(lastUser);
-    }
   }
 
   public submit(): void {
-    const name: string = this.loginForm.controls.login.value.trim();
-    this.loginForm.controls.login.setValue(name);
-    const password: string = this.loginForm.controls.password.value.trim();
-    this.loginForm.controls.password.setValue(password);
+    const name: string = this.getValueFromControl('login');
+    const password: string = this.getValueFromControl('password');
     if (this.loginForm.valid) {
       this.handleLogin(new User(name, password));
     }

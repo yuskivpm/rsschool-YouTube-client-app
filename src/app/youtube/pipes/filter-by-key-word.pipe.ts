@@ -5,10 +5,8 @@ import { IResponseItem } from '../models/response-item.model';
   name: 'filterByKeyWord'
 })
 export class FilterByKeyWordPipe implements PipeTransform {
-
   public transform(responseItems: IResponseItem[], filterWord: string): IResponseItem[] {
     const filter: RegExp = new RegExp(filterWord, 'i');
     return responseItems?.filter(({ snippet: { title } }) => filter.test(title));
   }
-
 }

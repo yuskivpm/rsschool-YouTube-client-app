@@ -12,7 +12,7 @@ import { API_BASE, VIDEO_API, SEARCH_API } from 'src/app/constants/common';
 
 @Injectable()
 export class YoutubeAuthInterceptor implements HttpInterceptor {
-  constructor() {}
+  constructor() { }
 
   public intercept(
     request: HttpRequest<unknown>,

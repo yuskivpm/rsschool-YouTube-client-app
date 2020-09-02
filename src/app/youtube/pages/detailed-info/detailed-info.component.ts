@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { finalize } from 'rxjs/operators';
 
 import { SearchService } from 'src/app/core/services/search.service';
 import { IResponseItem } from '../../models/response-item.model';
@@ -17,11 +18,10 @@ export class DetailedInfoComponent implements OnInit {
 
   public ngOnInit(): void {
     const myId: string = this.activatedRoute.snapshot.paramMap.get('id');
-    this.searchService.getItemById(myId).subscribe(
-      item => this.item = item,
-      null,
-      () => this.isLoading = false
+    this.searchService.getItemById(myId).pipe(
+      finalize(() => this.isLoading = false)
+    ).subscribe(
+      item => this.item = item
     );
   }
-
 }
