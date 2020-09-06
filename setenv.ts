@@ -3,8 +3,6 @@ const { argv } = require('yargs');
 require('dotenv').config();
 
 const isProduction = argv.environment === 'prod';
-console.log(`argv.environment=${argv.environment}`)
-console.log(`Generate environment. isProdMode=${isProduction}`)
 const targetPath = isProduction
    ? `./src/environments/environment.prod.ts`
    : `./src/environments/environment.ts`;
