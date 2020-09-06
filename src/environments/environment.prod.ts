@@ -1,6 +1,7 @@
 import { Environment } from './environment.model';
+import { API_KEY } from './env';
 
 export const environment: Environment = {
   production: true,
-  API_KEY: 'AIzaSyA9YizWPzRkjLb9jzi36YVkTVFHIVe7RgY',
+  API_KEY,
 };
