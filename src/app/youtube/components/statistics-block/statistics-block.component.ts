@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { IStatistics } from '../../models/response-item.model';
+import { IStatistics } from 'src/app/shared/models/response-item.model';
 
 @Component({
   selector: 'app-statistics-block',

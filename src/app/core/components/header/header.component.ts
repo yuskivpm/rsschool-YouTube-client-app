@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { SORT_BUTTONS, MIN_SEARCH_LENGTH } from 'src/app/constants/common';
-import { SortEvent } from 'src/app/youtube/models/sort-event.model';
+import { SortEvent } from 'src/app/shared/models/sort-event.model';
 import { SearchService } from 'src/app/core/services/search.service';
 import { AuthUserService } from 'src/app/core/services/auth-user.service';
 import { Subscription } from 'rxjs';

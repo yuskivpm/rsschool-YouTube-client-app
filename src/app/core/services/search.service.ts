@@ -3,9 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { of, Observable, BehaviorSubject } from 'rxjs';
 import { map, take, switchMap, debounceTime, finalize } from 'rxjs/operators';
 
-import { IYouTubeResponse } from 'src/app/youtube/models/youtube-response.model';
-import { IResponseItem, IID } from 'src/app/youtube/models/response-item.model';
-import { SortEvent } from 'src/app/youtube/models/sort-event.model';
+import { IYouTubeResponse } from 'src/app/shared/models/youtube-response.model';
+import { IResponseItem, IID } from 'src/app/shared/models/response-item.model';
+import { SortEvent } from 'src/app/shared/models/sort-event.model';
 import { SEARCH_API, VIDEO_API, DEBOUNCE_TOME } from 'src/app/constants/common';
 
 // this rule conflict with typedef rule (https://github.com/palantir/tslint/issues/711)

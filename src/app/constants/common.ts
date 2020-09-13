@@ -24,10 +24,20 @@ export const MIN_LOGIN_LENGTH: number = 3;
 
 export const MIN_PASSWORD_LENGTH: number = 7;
 
+export const MIN_TITLE_LENGTH: number = 3;
+
+export const MIN_DESCRIPTION_LENGTH: number = 5;
+
+export const MIN_URL_LENGTH: number = 5;
+
+export const URL_PATTERN: string = '^(https:\/\/).+';
+
 // router URLs
 export const LOGIN_PAGE: string = 'login';
 
 export const LIST_PAGE: string = 'list';
+
+export const ADMIN_PAGE: string = 'admin';
 
 export const USER_HOLDER: string = 'auth-user';
 

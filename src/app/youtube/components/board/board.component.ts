@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { IResponseItem } from 'src/app/youtube/models/response-item.model';
+import { IResponseItem } from 'src/app/shared/models/response-item.model';
 
 @Component({
   selector: 'app-board',

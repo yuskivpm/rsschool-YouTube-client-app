@@ -40,9 +40,9 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  private getValueFromControl(constrolName: string): string {
-    const value: string = this.loginForm.controls[constrolName].value.trim();
-    this.loginForm.controls[constrolName].setValue(value);
+  private getValueFromControl(controlName: string): string {
+    const value: string = this.loginForm.controls[controlName].value.trim();
+    this.loginForm.controls[controlName].setValue(value);
     return value;
   }
 

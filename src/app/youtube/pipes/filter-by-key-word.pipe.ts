@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { IResponseItem } from '../models/response-item.model';
+import { IResponseItem } from 'src/app/shared/models/response-item.model';
 
 @Pipe({
   name: 'filterByKeyWord'

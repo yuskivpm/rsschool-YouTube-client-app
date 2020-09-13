@@ -8,8 +8,8 @@ import {
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 
-import { AuthUserService } from 'src/app/core/services/auth-user.service';
-import { LIST_PAGE, LOGIN_PAGE } from 'src/app/constants/common';
+import { AuthUserService } from '../services/auth-user.service';
+import { LIST_PAGE, LOGIN_PAGE } from '../../constants/common';
 
 @Injectable({
   providedIn: 'root',

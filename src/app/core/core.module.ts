@@ -6,6 +6,7 @@ import { SortButtonComponent } from './components/sort-button/sort-button.compon
 import { UserLoginComponent } from './components/user-login/user-login.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { AdminComponent } from './pages/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     UserLoginComponent,
     FooterComponent,
     NotFoundComponent,
+    AdminComponent,
   ],
   exports: [
     HeaderComponent,

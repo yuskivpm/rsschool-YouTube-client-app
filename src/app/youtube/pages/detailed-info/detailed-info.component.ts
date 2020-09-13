@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { finalize } from 'rxjs/operators';
 
 import { SearchService } from 'src/app/core/services/search.service';
-import { IResponseItem } from '../../models/response-item.model';
+import { IResponseItem } from 'src/app/shared/models/response-item.model';
 
 @Component({
   selector: 'app-detailed-info',
