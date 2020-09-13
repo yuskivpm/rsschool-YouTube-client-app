@@ -1,0 +1,37 @@
+<header [class.disabled]="!isAuthorized">
+    <div class="row">
+        <div class="search-input">
+            <img src="../../../assets/youtube.png" alt="YouTube" class="logo">
+
+            <mat-form-field class="input-field">
+                <mat-label>Search in youtube</mat-label>
+                <input #searchText class="input" matInput type="text" (input)="search(searchText.value)">
+                <button *ngIf="searchText.value" class="close-button" mat-button matSuffix mat-icon-button
+                    aria-label="Clear" (click)="searchText.value=''">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+
+            <mat-icon (click)="showSettings = !showSettings" class="settings-button" aria-hidden="false"
+                aria-label="Settings">settings</mat-icon>
+
+            <button routerLink="/admin" routerLinkActive="active-button" class="button" mat-button color="primary">
+              Create card
+            </button>
+            <button routerLink="/list" routerLinkActive="active-button" class="button" mat-button color="primary">
+              Youtube list
+            </button>
+        </div>
+        <app-user-login></app-user-login>
+    </div>
+
+    <div [class]="{ sort: true, showSettings: showSettings }">
+        <span class="label">Sorting by: </span>
+
+        <app-sort-button *ngFor="let button of buttons" caption="{{button}}" [sortOrder]="sortOrderByName(button)"
+            (click)="reSort(button)"></app-sort-button>
+
+        <span class="title">by word or sentence</span>
+        <input type="text" class="filter-input" #filterInput (input)="startFilter(filterInput.value)">
+    </div>
+</header>

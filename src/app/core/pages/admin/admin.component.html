@@ -1,0 +1,30 @@
+<div class="admin-component">
+  <h2>Create new card</h2>
+  <form [formGroup]="adminForm" (ngSubmit)="submit()">
+    <mat-form-field class="input-field">
+      <mat-label>Title</mat-label>
+      <input class="input" matInput type="text" formControlName="title" title="At least 3 characters">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field class="input-field">
+      <mat-label>Description</mat-label>
+      <input class="input" matInput type="text" formControlName="description" title="At least 5 characters">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field class="input-field">
+      <mat-label>Image URL</mat-label>
+      <input class="input" matInput type="text" formControlName="image" title="At least 5 characters">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field class="input-field">
+      <mat-label>Video URL</mat-label>
+      <input class="input" matInput type="text" formControlName="video" title="At least 5 characters">
+    </mat-form-field>
+    <br>
+
+    <button type="submit" class="submit" [disabled]="adminForm.invalid">Create card</button>
+  </form>
+</div>

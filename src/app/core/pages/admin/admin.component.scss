@@ -1,0 +1,35 @@
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-component {
+  width: 400px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+}
+
+.input-field {
+  width: 100%;
+  margin: 5px 0px;
+  padding: 0 15px;
+  box-sizing: border-box;
+  border: none;
+}
+
+.submit {
+  padding: 10px 50px;
+  align-self: flex-end;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 2px 0 5px var(--color);
+  background-color: var(--color);
+  color: #fff;
+}
+
+.submit:disabled {
+  background-color: grey;
+  box-shadow: 2px 0 5px grey;
+}

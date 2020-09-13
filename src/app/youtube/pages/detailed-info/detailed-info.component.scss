@@ -1,0 +1,54 @@
+:host {
+  min-height: 600px;
+  margin: 30px;
+}
+
+.empty {
+  color: red;
+  text-align: center;
+}
+
+.item-block {
+  display: flex;
+  margin: 30px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px grey;
+}
+
+.equal {
+  flex: 1;
+}
+
+.logo {
+  object-fit: cover;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  padding: 35px;
+  background-color: #e5e5e5;
+}
+
+.headers {
+  display: flex;
+  justify-content: space-between;
+}
+
+.date {
+  color: grey;
+  font-size: small;
+}
+.description {
+  color: grey;
+}
+
+app-statistic {
+  margin: 0 10px;
+}
+
+@media screen and (max-width: 900px) {
+  .item-block {
+    flex-direction: column;
+  }
+}

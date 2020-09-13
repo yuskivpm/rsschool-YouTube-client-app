@@ -1,0 +1,11 @@
+<footer>
+    <p>RS School YouTube client (c) 2020</p>
+    <p><strong>NgRx Store "CustomCards" list:</strong></p>
+    <p *ngFor="let item of customCards$ | async" class="ngrx">
+      {{item.title}}
+    </p>
+    <p><strong>NgRx Store "Youtube responses" list:</strong></p>
+    <p *ngFor="let item of youtube$ | async" class="ngrx">
+      {{item.snippet.title}}
+    </p>
+</footer>
