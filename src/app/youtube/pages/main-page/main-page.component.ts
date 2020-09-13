@@ -1,10 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { BehaviorSubject, Subscription } from 'rxjs';
+import { Subscription, BehaviorSubject } from 'rxjs';
 
 import { IResponseItem } from 'src/app/shared/models/response-item.model';
-import { SearchService } from 'src/app/core/services/search.service';
 import { THEME_COLOR } from 'src/app/constants/common';
 import { SortEvent } from 'src/app/shared/models/sort-event.model';
+import { SearchService } from 'src/app/core/services/search.service';
 
 @Component({
   selector: 'app-main-page',

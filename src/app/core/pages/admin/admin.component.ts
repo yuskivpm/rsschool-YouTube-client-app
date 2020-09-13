@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Store } from '@ngrx/store';
 
 import {
   MIN_TITLE_LENGTH,
@@ -7,6 +8,8 @@ import {
   MIN_URL_LENGTH,
   URL_PATTERN,
 } from 'src/app/constants/common';
+import { CustomCardModel } from 'src/app/shared/models/custom-card.model';
+import { saveCustomCard } from 'src/app/redux/actions/custom-card.actions';
 
 @Component({
   selector: 'app-admin',
@@ -16,9 +19,13 @@ import {
 export class AdminComponent implements OnInit {
   public adminForm: FormGroup;
 
-  constructor() { }
+  constructor(private store: Store<{ customCard: CustomCardModel }>) { }
 
-  ngOnInit(): void {
+  private getValueFromControl(controlName: string): string {
+    return this.adminForm.controls[controlName].value.trim();
+  }
+
+  public ngOnInit(): void {
     this.adminForm = new FormGroup({
       title: new FormControl(null, [
         Validators.required,
@@ -42,11 +49,14 @@ export class AdminComponent implements OnInit {
   }
 
   public submit(): void {
-    // const name: string = this.getValueFromControl('login');
-    // const password: string = this.getValueFromControl('password');
-    // if (this.loginForm.valid) {
-    //   this.handleLogin(new User(name, password));
-    // }
+    const customCard: CustomCardModel = {
+      title: this.getValueFromControl('title'),
+      description: this.getValueFromControl('description'),
+      image: this.getValueFromControl('image'),
+      video: this.getValueFromControl('video'),
+      date: new Date().toUTCString(),
+    };
+    this.store.dispatch(saveCustomCard({ customCard }));
   }
 
 }

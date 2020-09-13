@@ -1,5 +1,10 @@
-import { createAction } from '@ngrx/store';
+import { createAction, props, ActionCreator } from '@ngrx/store';
+import { CustomCardModel } from '../../shared/models/custom-card.model';
+import { TypedAction } from '@ngrx/store/src/models';
 
-export const saveCustomCard = createAction('SAVE_CUSTOM_CARD');
+type actionProps = { customCard: CustomCardModel };
+type actionType = ActionCreator<'[CUSTOM CARD] SAVE', (props: actionProps) =>
+  actionProps & TypedAction<'[CUSTOM CARD] SAVE'>>;
 
-export const loadCustomCards = createAction('LOAD_CUSTOM_CARDS');
+export const saveCustomCard: actionType =
+  createAction('[CUSTOM CARD] SAVE', props<{ customCard: CustomCardModel }>());

@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { of, Observable, BehaviorSubject } from 'rxjs';
-import { map, take, switchMap, debounceTime, finalize } from 'rxjs/operators';
+import { map, take, tap, switchMap, debounceTime, finalize } from 'rxjs/operators';
 
 import { IYouTubeResponse } from 'src/app/shared/models/youtube-response.model';
 import { IResponseItem, IID } from 'src/app/shared/models/response-item.model';
 import { SortEvent } from 'src/app/shared/models/sort-event.model';
 import { SEARCH_API, VIDEO_API, DEBOUNCE_TOME } from 'src/app/constants/common';
+import { Store } from '@ngrx/store';
+import { saveYoutubeResponse } from 'src/app/redux/actions/youtube.actions';
 
 // this rule conflict with typedef rule (https://github.com/palantir/tslint/issues/711)
 // tslint:disable-next-line: no-inferrable-types
@@ -23,7 +25,7 @@ export class SearchService {
   private aSortOrder: BehaviorSubject<SortEvent> = new BehaviorSubject(null);
   private loading: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private store: Store<{ youtube: IResponseItem[] }>) {}
 
   get isLoading(): BehaviorSubject<boolean> {
     return this.loading;
@@ -69,7 +71,10 @@ export class SearchService {
               .join(',');
             return this.http
               .get(VIDEO_API + videos)
-              .pipe(map((response: IYouTubeResponse) => response.items));
+              .pipe(
+                map((response: IYouTubeResponse) => response.items),
+                tap((youtube: IResponseItem[]) => this.store.dispatch(saveYoutubeResponse({ youtube })))
+              );
           }
         ),
         take(1),

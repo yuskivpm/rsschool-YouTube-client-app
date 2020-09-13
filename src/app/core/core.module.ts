@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 import { SharedModule } from '../shared/shared.module';
 import { HeaderComponent } from './components/header/header.component';
@@ -23,6 +24,7 @@ import { AdminComponent } from './pages/admin/admin.component';
   ],
   imports: [
     SharedModule,
+    RouterModule.forChild([]),
   ]
 })
 export class CoreModule { }

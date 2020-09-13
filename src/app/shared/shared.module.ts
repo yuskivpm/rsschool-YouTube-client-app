@@ -5,6 +5,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 import { YoutubeAuthInterceptor } from './interceptors/youtube-auth.interceptor';
 
@@ -17,6 +18,7 @@ import { YoutubeAuthInterceptor } from './interceptors/youtube-auth.interceptor'
     FormsModule,
     MatIconModule,
     MatProgressSpinnerModule,
+    MatButtonModule,
   ],
   exports: [
     CommonModule,
@@ -26,6 +28,7 @@ import { YoutubeAuthInterceptor } from './interceptors/youtube-auth.interceptor'
     MatIconModule,
     MatProgressSpinnerModule,
     MatInputModule,
+    MatButtonModule,
   ],
   providers: [
     {
